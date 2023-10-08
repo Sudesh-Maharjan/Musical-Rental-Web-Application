@@ -1,0 +1,17 @@
+.contact-us{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50%;
+    height: 23rem;
+}
+.contact-email, .contact-number, .follow-us{
+    color: white;
+    margin-top: 1rem;
+    margin-left: 5rem;
+    font-size: 18px;
+
+}
+.container-contact{
+   margin-top: 7rem;
+}

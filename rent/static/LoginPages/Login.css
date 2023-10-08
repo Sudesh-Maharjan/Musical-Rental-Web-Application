@@ -1,0 +1,40 @@
+.center-container-login{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    height: 17rem;
+    width: 22rem;
+    border-radius: 7px;
+    flex-direction: column;
+}
+.Login-container{
+    background-color: rgb(229, 209, 209);
+display: flex;
+position: absolute;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+
+height: 13rem;
+width: 22rem;
+
+}
+.input-email-textfield-login, .input-password-textfield-login{
+    height: 4.5ch;
+    border-radius: 5px;
+    border: none;
+    width: 38ch;
+    margin-top: 1.5rem;
+}
+.close-login-btn{
+    font-size: 29px;
+    display: flex;
+    margin-left: 21.9ch;
+    margin-top: -16.4ch;
+    cursor: pointer;
+}
