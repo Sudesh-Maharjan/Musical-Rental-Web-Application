@@ -12,7 +12,7 @@ def contact(request):
 def tracker(request):
     return HttpResponse("This is tracker")
 def about(request):
-    return HttpResponse("This is about")
+    return render(request, 'rent/about.html')
 def search(request):
     return HttpResponse("This is search")
 def productView(request):

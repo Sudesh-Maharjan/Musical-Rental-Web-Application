@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+    {% block css %}
+
+      <link rel="stylesheet" href="static/HomePages/HomePage.css">
+    <link rel="stylesheet" href="static/RegisterPages/Register.css">
+    <link rel="stylesheet" href="static/LoginPages/Login.css">
+    <link rel="stylesheet" href="static/HomePages/contact.css">
+    <link rel="stylesheet" href="static/HomePages/product.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    {% endblock %}
+
+</head>
+<body>
+
+<div class="main-container">
+    <nav class="nav-bar">
+        <ul class="nav-bar-anchor">
+    <li ><a class = "nav-home" href="HomePage_Ashirbad.html">Home</a></li>
+    <!-- <li ><a class = "nav-second-hand" href="templates/second_hand.html">Second hand Products</a></li> -->
+    <!-- <li ><a class = "nav-rent" href="Rent.html">Rent Instrument</a></li> -->
+    <li ><a class = "nav-rent" href="about.html">About us</a></li>
+    <li ><a class = "nav-payment" href="Payment.html">Payment</a></li>
+    </ul>
+    <li class="dropdown">
+      <button class="SignUp-nav">SignUp <i class="fas fa-caret-down"></i></button>
+      <div class="dropdown-content">
+        <li class="Register-nav">Register</li>
+        <li class="Login-nav">Login</li>
+      </div>
+    </li>
+  </nav>
+</div>
+
+    
+<div class="center-container">
+    <div class="Resigter-Login-btn">
+    <div class="Register-div">
+      <Button class="btn-nav-Register">Register</Button>
+    </div>
+    <br>
+    <div class="Login-div">
+      <button class="btn-nav-Login">Login</button>
+    </div>
+    </div>
+    </div>
+    
+    
+    <!-- Register container -->
+    <div class="center-container-register">
+      <div class="close-register-btn"><i class="fa-regular fa-circle-xmark fa-fade fa-sm" style="color: #d9b4b4;"></i></div>
+      <form class="Register-container" method="post" action="">
+        <input type="text" class="input-user-textfield" placeholder="Username">
+        <small class="username_error_message">Error message</small>
+        <input type="email" class="input-email-textfield" placeholder="Email">
+        <small class="email_error_message">Error message</small>
+    
+        <input type="number" class="input-number-textfield" placeholder="Phone number">
+        <small class="number_error_message">Error message</small>
+    
+        <input type="password" class="input-password-textfield" placeholder="Password">
+        <small class="password_error_message">Error message</small>
+    
+        <input type="password" class="input-confirm-password-textfield" placeholder="Confirm passowrd">
+        <small class="confirm_password_error_message">Error message</small>
+    
+        <input class="Register-btn" type="submit" value="Register"></input>
+      </form>
+    
+    </div>
+    <!--Login container-->
+    <div class="center-container-login">
+      <div class="close-login-btn"><i class="fa-regular fa-circle-xmark fa-fade fa-sm" style="color: #d9b4b4;"></i></div>
+      <div class="Login-container">
+        <input type="email" class="input-email-textfield-login" placeholder="Email">
+        <input type="password" class="input-password-textfield-login" placeholder="Password">
+        <button class="Login-btn">Login</button>
+      </div>
+    </div>
+  <script src="static/HomePages/HomePage.js"></script>
+<script src="static/RegisterPages/Register_validation.js"></script>
+{% block body %}
+
+{% endblock %}
+
+</body>
+</html>

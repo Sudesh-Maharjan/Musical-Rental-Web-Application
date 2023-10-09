@@ -1,0 +1,26 @@
+.product-container{
+    background-color: rgb(229, 209, 209);
+    cursor: pointer;
+    border-radius: 7px;
+    margin-left: 40px;
+    margin-top: 50px;
+    width: 15rem;
+    height: 25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.product-container:hover{
+    transition: box-shadow 0.2s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.product{
+    background-color: whitesmoke;
+    cursor: pointer;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    height: 19rem;
+    width: 13rem;
+
+}
