@@ -1,5 +1,7 @@
 from django.urls import path
 from .import views
+from django.conf.urls.static import static
+from django.conf import settings
 urlpatterns = [
     path("", views.rent, name='RentHome'),
     path('second-hand', views.secondhand, name='secondhand'),
@@ -10,3 +12,5 @@ urlpatterns = [
     path('productview', views.productView, name='Productview'),
     path('checkout', views.checkout, name='Checkout'),
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

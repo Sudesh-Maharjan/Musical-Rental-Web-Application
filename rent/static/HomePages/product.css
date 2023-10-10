@@ -3,24 +3,42 @@
     cursor: pointer;
     border-radius: 7px;
     margin-left: 40px;
-    margin-top: 50px;
-    width: 15rem;
-    height: 25rem;
-    display: flex;
-    justify-content: center;
+    margin-top: 30px;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(4 ,1fr);
+    grid-gap: 20px;
     align-items: center;
-}
-.product-container:hover{
-    transition: box-shadow 0.2s ease-in-out;
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-}
+} 
 .product{
     background-color: whitesmoke;
     cursor: pointer;
     border-radius: 7px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    height: 19rem;
-    width: 13rem;
-
+    align-items: center;
+    padding: 10px; /* Add some padding for spacing */
+    max-width: 300px; /* Limit the maximum width of each product */
+    /* height: 583px; */
+    margin: 10px; 
 }
+.product:hover{
+    transition: box-shadow 0.3s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.product img {
+    max-width: 100%; 
+    height: 100%;
+    object-fit: cover;
+  }
+  .add-to-cart{
+    background-color:  #f77620;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    border-style: none;
+    cursor: pointer;
+    height: 28px;
+    width: 100px;
+  }

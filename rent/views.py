@@ -1,9 +1,17 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Product
+from math import ceil
 
 # Create your views here.
 def rent(request):
-    return render(request, 'rent/HomePage_Ashirbad.html')
+    Products = Product.objects.all()
+    categories = Product.objects.values('category').distinct()
+    category_products = {}
+    for category in categories:
+        Products = Product.objects.filter(category = category['category'])
+        category_products[category['category']] = Products
+    return render(request, 'rent/HomePage_Ashirbad.html', {'Product': Products, 'category_products': category_products})
 
 def secondhand(request):
     return HttpResponse("This is second hand")

@@ -5,6 +5,8 @@
   <title>{% block title %} Rent{% endblock %}</title>
   {% block css %}
   {{ block.super }}
+  <link rel="stylesheet" href="static/HomePages/product.css">
+
    {% endblock %}
 </head>
 <body class="HomePage_body">
@@ -15,26 +17,33 @@
 <button class="enroll">Start now <i class="fa-solid fa-arrow-right fa-bounce" style="color: #ffffff;"></i></button> -->
 
 <!-- Product -->
+{% for category, products in category_products.items %}
+<h1>{{category}} </h1>
 <div class="product-container">
+  {% for product in products %}
   <div class="product">
-    <img src="Guitar1.jpg" alt="Guitar">
+    <img src="{{product.image}}" alt="{{product.product_name}}">
     <div class="product-details">
-        <label for="Guitar">Guitar</label>
-        <label for="Instrument">Instrument</label>
-        <p class="price">400</p>
-        <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab repellat consequuntur reprehenderit saepe est, provident cumque, voluptatem quisquam blanditiis, ducimus nobis sunt vero delectus sed alias expedita veritatis nesciunt velit.</p>
-        <p class="publish-date">Date</p>
+        <p>{{product.product_name}}</p>
+        <p>{{product.category}}</p>
+        <p class="price">{{product.price}}</p>
+        <p class="description">{{product.desc}}</p>
+        <p class="publish-date">{{product.publish_date}}</p>
+        <button class="add-to-cart">Add To Cart</button>
     </div>
   </div>
+  {% endfor %}
 </div>
-<Footer class="contact-us">
+{% endfor %}
+
+<footer class="contact-us">
   <div class="container-contact">
 <div class="contact-email">sudechii.m@gmail.com</div>
 <br>
 <div class="contact-number">9861611523</div>
 </div>
   <div class="follow-us">Follow us</div>
-</Footer>
+</footer>
 {% endblock %}
 
 
