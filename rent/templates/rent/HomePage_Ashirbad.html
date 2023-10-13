@@ -27,27 +27,60 @@
         <p>{{product.product_name}}</p>
         <p>{{product.category}}</p>
         <p class="price">{{product.price}}</p>
-        <p class="description">{{product.desc}}</p>
+        <p class="description">{{product.desc|slice:"0:53"}}...</p>
         <p class="publish-date">{{product.publish_date}}</p>
-        <button class="add-to-cart">Add To Cart</button>
+        <div class="product-add-view">
+        <button id = "pr{{ product.id }}" class="add-to-cart">Add To Cart</button>
+     <a class="quick-view" href="{% url 'ProductView' product.id %}">   <button id = "qv{{ product.id }}" class="quick-view">Quick View</button></a>
+    </div>
     </div>
   </div>
   {% endfor %}
 </div>
 {% endfor %}
 
-<footer class="contact-us">
-  <div class="container-contact">
-<div class="contact-email">sudechii.m@gmail.com</div>
-<br>
-<div class="contact-number">9861611523</div>
-</div>
-  <div class="follow-us">Follow us</div>
-</footer>
 {% endblock %}
 
 
 <!-- <script src="static/HomePages/HomePage.js"></script>
 <script src="static/RegisterPages/Register_validation.js"></script> -->
+{% block js %}
+<script>
+  console.log("working");
+  //cart logic
+  if(localStorage.getItem('cart') == null){
+    var cart = {}
+  }else{
+    //localstorage ma store gareko item lai get gareko
+    cart = JSON.parse(localStorage.getItem('cart'));
+  }
+  function updateCartCounter(){
+ let cartcounter = document.getElementById("cart-counter")
+ let itemcount = Object.keys(cart).length;
+ cartcounter.textContent = itemcount;
+  }
+
+var cart_selected = document.querySelectorAll('.add-to-cart');
+cart_selected.forEach(function(cart_selected){
+cart_selected.addEventListener('click', function(){
+console.log("clicked");
+var idstr = this.id.toString();
+console.log(idstr);
+if(idstr != undefined){
+  if(cart[idstr] === undefined){
+    cart[idstr] = 1;
+  }else{
+  cart[idstr] = cart[idstr] + 1;
+  }
+  updateCartCounter();
+localStorage.setItem('cart', JSON.stringify(cart));
+
+}
+console.log(cart);
+});
+});
+updateCartCounter();
+</script>
+{% endblock%}
 </body>
 </html>

@@ -29,10 +29,11 @@
 }
 .product img {
     max-width: 100%; 
-    height: 100%;
+    height: 18rem;
+    border-radius: 7px;
     object-fit: cover;
   }
-  .add-to-cart{
+  .add-to-cart, .quick-view{
     background-color:  #f77620;
     display: flex;
     align-items: center;
@@ -42,3 +43,15 @@
     height: 28px;
     width: 100px;
   }
+  .product-add-view{
+    display: flex;
+  }
+.quick-view{
+    text-decoration: none;
+    margin-left: 10px;
+}
+/* main produc view page css here */
+.product-container-main-page{
+  background-color: bisque;
+}
+/* main product view page css ends here */

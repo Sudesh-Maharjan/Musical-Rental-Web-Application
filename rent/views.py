@@ -4,7 +4,7 @@ from .models import Product
 from math import ceil
 
 # Create your views here.
-def rent(request):
+def rent(request): 
     Products = Product.objects.all()
     categories = Product.objects.values('category').distinct()
     category_products = {}
@@ -13,17 +13,16 @@ def rent(request):
         category_products[category['category']] = Products
     return render(request, 'rent/HomePage_Ashirbad.html', {'Product': Products, 'category_products': category_products})
 
-def secondhand(request):
-    return HttpResponse("This is second hand")
 def contact(request):
-    return HttpResponse("This is contact")
+    return render(request, 'rent/contact.html')
 def tracker(request):
-    return HttpResponse("This is tracker")
+    return render(request, 'rent/tracker.html')
 def about(request):
     return render(request, 'rent/about.html')
 def search(request):
-    return HttpResponse("This is search")
-def productView(request):
-    return HttpResponse("This is productview")
+    return render(request, 'rent/search.html')
+def productView(request, myid):
+    Products = Product.objects.filter(id =myid)
+    return render(request, 'rent/prodView.html', {'product': Products[0]})
 def checkout(request):
-    return HttpResponse("This is checkout")
+    return render(request, 'rent/checkout.html')

@@ -22,12 +22,15 @@
 <div class="main-container">
     <nav class="nav-bar">
         <ul class="nav-bar-anchor">
-    <li ><a class = "nav-home" href="HomePage_Ashirbad.html">Home</a></li>
+    <li ><a class = "nav-home" href="{% url 'RentHome' %}">Home</a></li>
     <!-- <li ><a class = "nav-second-hand" href="templates/second_hand.html">Second hand Products</a></li> -->
     <!-- <li ><a class = "nav-rent" href="Rent.html">Rent Instrument</a></li> -->
-    <li ><a class = "nav-rent" href="about.html">About us</a></li>
-    <li ><a class = "nav-payment" href="Payment.html">Payment</a></li>
+    <li ><a class = "nav-rent" href="{% url 'About' %}">About us</a></li>
+    <li ><a class = "nav-payment" href="{% url 'ContactUs' %}">Contact Us</a></li>
     </ul>
+    <li class="cart-show">
+     <a href="#">cart(<span id = "cart-counter">0</span> )</a>
+    </li>
     <li class="dropdown">
       <button class="SignUp-nav">SignUp <i class="fas fa-caret-down"></i></button>
       <div class="dropdown-content">
@@ -88,6 +91,6 @@
 {% block body %}
 
 {% endblock %}
-
+{% block js %} {% endblock%}
 </body>
 </html>
